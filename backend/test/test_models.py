@@ -11,3 +11,11 @@ def test_task_create_sem_desc():
     task = TaskCreate(titulo="Estudar FastAPI")
     assert task.titulo == "Estudar FastAPI"
     assert task.descricao is None
+
+def test_task_create_remove_espacos():
+    task = TaskCreate(titulo="   Estudar FastAPI   ", descricao="  Aprender Pydantic  ")
+    assert task.titulo == "Estudar FastAPI"
+    assert task.descricao == "Aprender Pydantic"
+
+
+
