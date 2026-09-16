@@ -14,7 +14,7 @@ class TaskCreate(BaseModel):
     @classmethod
     def validar_titulo(cls, v:str):
         if not v.strip():
-            raise ValueError("o Titulo está vazio ou contém apenas espaços.")
+            raise ValueError("O Titulo está vazio ou contém apenas espaços.")
         return v.strip()
 
     @field_validator("descricao")
@@ -23,5 +23,5 @@ class TaskCreate(BaseModel):
         if v is None:
             return None
         if not v.strip():
-            raise ValueError("A descricao está vazia ou contém apenas espaços")
+            raise ValueError("A descricao está vazia ou contém apenas espaços.")
         return v.strip()
