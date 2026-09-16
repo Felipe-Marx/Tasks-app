@@ -25,3 +25,6 @@ class TaskCreate(BaseModel):
         if not v.strip():
             raise ValueError("A descricao está vazia ou contém apenas espaços.")
         return v.strip()
+
+class TaskStatusUpdate(BaseModel):
+    concluida: bool
